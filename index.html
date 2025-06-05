@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I'm Sorry Bala 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .heart {
+      width: 20px;
+      height: 20px;
+      background: red;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      animation: float 5s linear infinite;
+      transform: rotate(45deg);
+      margin-left: -10px;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .box {
+      position: relative;
+      z-index: 2;
+      background: white;
+      padding: 30px;
+      margin: 100px auto;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    }
+
+    .box h1 {
+      color: #e91e63;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .box p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      padding: 12px 20px;
+      margin: 10px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      background: #e91e63;
+      color: white;
+      transition: transform 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+    }
+
+    .btn:active {
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts">
+    <!-- Generating multiple hearts -->
+    <script>
+      for(let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (3 + Math.random() * 2) + 's';
+        document.body.querySelector('.hearts').appendChild(heart);
+      }
+    </script>
+  </div>
+
+  <div class="box">
+    <h1>I'm Really Sorry, Bala 😔</h1>
+    <p>Bala, I never meant to hurt you. You mean everything to me, and I love you more than words can say. 💖</p>
+    <p>Will you forgive your silly boy?</p>
+    <button class="btn" onclick="respond()">Yes 💘</button>
+    <button class="btn" onclick="respond()">Option 1 (Also Yes 😍)</button>
+  </div>
+
+  <script>
+    function respond() {
+      alert("Aww, I love you Bala! 💋💖 Thank you for forgiving me 😘");
+    }
+  </script>
+</body>
+</html>
